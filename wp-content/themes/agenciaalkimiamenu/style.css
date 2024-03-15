@@ -1,0 +1,172 @@
+/*
+Theme Name: agenciaalkimiamneu
+Theme URI: 
+Author: Ricardo Ramírez Meza
+Author URI: https://rickyram
+Description: Theme diseñado para la agencia de mercadotecnia en baja california para WordPress 6.4.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-menu, css, grid, flex, responsive, mobile first.
+Text Domain: agenciaalkimiamenu
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Linden+Hill:ital@0;1&family=Orelega+One&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    /* fuentes */
+    --fuente-principal:"Linden Hill", serif;
+    --fuente-parrafos:"Roboto", sans-serif;
+    --fuente-extra: "Orelega One", serif;
+
+    /* COLORES */
+    --color-secundario:#425cc7;
+    --fondo-gris: #fff;
+    --gris-fondo:#f2f2f2;
+    --blanco: #fff;
+    --letras-gris: #666666;
+    --gris:#4d4d4d;
+    --negro: #000;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+body{
+    font-family:var(--fuente-principal);
+    font-size: 1.8rem;
+    line-height: 2;
+}
+
+
+/* HEADINGS */
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--fuente-titulos);
+    margin: 0 0 5rem 0;
+    line-height: 1.2;
+}
+h1{
+    font-size: 6rem;
+}
+h2{
+    font-size: 4.8rem;
+}
+h3{
+    font-size: 3.6rem;
+}
+h4{
+    font-size: 2.4rem;
+}
+
+
+
+/* GLOBALES */
+p{
+    margin: 0;
+    color: #000;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.contenedor{
+    width: min(95%, 120rem);
+    margin: 0 auto;
+}
+
+/* UTILIDADES */
+.text-center{
+    text-align: center;
+}
+.text-primario{
+    color: var(--color-principal);
+}
+.texto-blanco{
+    color: var(--blanco);
+}
+.seccion{
+    padding: 5rem 0;
+}
+
+/* HEADER */
+.header{
+    border: 1px solid red;
+    padding: 2rem 0;
+}
+.barra-navegacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* con un min-width de 2600 hace que siempre se vea como mobile first */
+@media(min-width:2600px){
+    .barra-navegacion{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+/* Con menu-principal en display none desaparece la navegación */
+/* .menu-principal {
+    display: none;
+} */
+.burguer-menu:hover{
+    cursor: pointer;
+}
+.contenedor-menu{
+    opacity: 0;
+    max-height: 0;
+}
+@media(min-width:2600px){
+    .contenedor-menu{
+        all:unset;
+    }
+}
+@media(min-width:2600px){
+    /* en display block aparece el menu en dispositivos mayores al 768px */
+    .menu-principal{
+        display: block;
+    }
+    .menu-principal .menu{
+        display: flex;
+    }
+}
+.menu-principal a{
+    font-family: var(--fuente-extra);
+    display: block;
+    text-align: center;
+    color: var(--color-secundario);
+    font-size: 2.2rem;
+    padding: .5rem 2rem;
+}
+.menu-principal .current_page_item{
+    border-bottom: 3px solid var(--color-secundario);
+}
+
+
+/* FOOTER */
+.footer .menu-principal a{
+    color: var(--negro);
+    text-align: center;
+    font-size: 2.4rem;
+    padding: 0 1rem;
+}
+
+.footer .current_page_item{
+    border: none;
+}
